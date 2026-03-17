@@ -6,5 +6,37 @@
 	</head>
 	<body>
 		<button type="button" event="time_now()">Show Current Date</button>
+		<br><br>
+		<div class="form">
+			<form>
+				<label for="name">Name:</label><br>
+				<input type="text" id="name" name="name"><br>
+				<label for="age">Age:</label><br>
+				<input type="number" id="age" name="age" min="18" max="99"><br>
+				<label for="email">Email:</label><br>
+				<input type="email" id="email" name="email"><br>
+				<label for="course">Course:</label><br>
+				<select id="course" name="course">
+					<option value="FoodAppr">BS in Food Appreciation</option>
+					<option value="AppliedPoet">BS in Applied Poetry of the Future</option>
+					<option value="CompRepair">BS in Computer Repair Shop</option>
+					<option value="VideoGame">BS in Video Gaming</option>
+					<option value="InsDown">BS in Installing and Downloading</option>
+				</select><br><br>
+				<input type="submit">
+				<input type="reset">
+			</form>
+		</div>
+		<br>
+		<div class="searchStd">
+			<form>
+				<label for="searchStd">Search Student:</label><br>
+				<input type="number" id="searchStd" name="searchStd" min="202400000" max="202499999">
+				<input type="submit">
+			</form>
+			<div class="searchRslt">
+				<p id="searchOutput"></p>
+			</div>
+		</div>
 	</body>
 </html>
