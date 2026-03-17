@@ -24,7 +24,7 @@
 					<option value="VideoGame">BS in Video Gaming</option>
 					<option value="InsDown">BS in Installing and Downloading</option>
 				</select><br><br>
-				<button id="btnSubmit" name="btnSubmit" onclick="addStudent">Submit</button>
+				<button id="btnSubmit" name="btnSubmit" onclick="add_student">Submit</button>
 				<input type="reset">
 			</form>
 		</div>
@@ -33,7 +33,7 @@
 			<form>
 				<label for="searchStd">Search Student:</label><br>
 				<input type="number" id="searchStd" name="searchStd" min="202400000" max="202499999">
-				<input type="submit">
+				<button id="btnSearch" name="btnSearch" onclick="find_student">Submit</button>
 			</form>
 			<div class="searchRslt">
 				<p id="searchOutput"></p>
