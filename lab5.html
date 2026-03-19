@@ -6,34 +6,43 @@
 		<script type="text/Javascript" src="lab5_scripts.js"></script>
 	</head>
 	<body>
-		<button type="button" event="time_now()">Show Current Date</button>
+         <nav class="navbar">
+            <h1>University of The Philippines Visayas Student Registration Website</h1>
+         </nav>
+		<button type="button" class="floating-date-btn" onclick="time_now()">Show Current Date</button>
 		<br><br>
-		<div class="form">
-			<form>
-				<label for="name">Name:</label><br>
-				<input type="text" id="name" name="name"><br>
-				<label for="age">Age:</label><br>
-				<input type="number" id="age" name="age" min="18" max="99"><br>
-				<label for="email">Email:</label><br>
-				<input type="email" id="email" name="email"><br>
-				<label for="course">Course:</label><br>
-				<select id="course" name="course">
-					<option value="FoodAppr">BS in Food Appreciation</option>
-					<option value="AppliedPoet">BS in Applied Poetry of the Future</option>
-					<option value="CompRepair">BS in Computer Repair Shop</option>
-					<option value="VideoGame">BS in Video Gaming</option>
-					<option value="InsDown">BS in Installing and Downloading</option>
-				</select><br><br>
-				<button id="btnSubmit" name="btnSubmit" onclick="add_student">Submit</button>
-				<input type="reset">
-			</form>
-		</div>
+        <div class="container">
+            <div class="instructions">
+                <h2>Welcome!</h2>
+                <p>Please use the form below to register a new student. Ensure the name contains exactly one space, the age is between 19-98, and the email belongs to the <strong>@up.edu.ph</strong> domain. Use the given Student ID upon registration to find a student.</p>
+            </div>
+		    <div class="form">
+			    <form>
+				    <label for="name">Name:</label><br>
+				    <input type="text" id="name" name="name"><br>
+				    <label for="age">Age:</label><br>
+				    <input type="number" id="age" name="age" min="18" max="99"><br>
+				    <label for="email">Email:</label><br>
+				    <input type="email" id="email" name="email"><br>
+				    <label for="course">Course:</label><br>
+				    <select id="course" name="course">
+					    <option value="FoodAppr">BS in Food Appreciation</option>
+					    <option value="AppliedPoet">BS in Applied Poetry of the Future</option>
+					    <option value="CompRepair">BS in Computer Repair Shop</option>
+					    <option value="VideoGame">BS in Video Gaming</option>
+					    <option value="InsDown">BS in Installing and Downloading</option>
+				    </select><br><br>
+				    <button id="btnSubmit" name="btnSubmit" onclick="add_student()">Submit</button>
+				    <input type="reset">
+			    </form>
+		    </div>
+        </div>
 		<br>
 		<div class="searchStd">
 			<form>
 				<label for="searchStd">Search Student:</label><br>
 				<input type="number" id="searchStd" name="searchStd" min="202400000" max="202499999">
-				<button id="btnSearch" name="btnSearch" onclick="find_student">Submit</button>
+				<button id="btnSearch" name="btnSearch" onclick="find_student()">Submit</button>
 			</form>
 			<div class="searchRslt">
 				<p id="searchOutput"></p>
