@@ -73,6 +73,13 @@ function add_student(event) {
     course: course,
     studentID: studentID,
   };
+  const errors = validateForm(name, age, email);
+
+  if(errors.length > 0) {
+    alert("Form submission failed:\n" + errors.join("\n"));
+    return;
+  }
+  
   students.push(student);
   alert("Student added: " + name + ", ID: " + studentID);
   document.getElementById("studentForm").reset();
@@ -89,4 +96,23 @@ function getStudentID() {
   return studentID;
 }
 
-function validateForm() {}
+function validateForm(name, age, email) {
+  let errors = [];
+
+  if (name.length <= 5) {
+    errors.push("Name must be more than 5 characters.");
+  }
+  if (!name.includes(" ")) {
+    errors.push("Name must contain a space.");
+  }
+  if (isNaN(age)) {
+    errors.push("Age must be a number.");
+  }
+  if (age < 19 || age > 98) {
+    errors.push("Age must be between > 18 and  < 99.");
+  }
+  if (!email.endsWith("@up.edu.ph")) {
+    errors.push("Email must end with @up.edu.ph.");
+  }
+  return errors;
+}
