@@ -17,7 +17,7 @@
                 <p>Please use the form below to register a new student. Ensure the name contains exactly one space, the age is between 19-98, and the email belongs to the <strong>@up.edu.ph</strong> domain. Use the given Student ID upon registration to find a student.</p>
             </div>
 		    <div class="form">
-			    <form>
+			    <form id ="studentForm">
 				    <label for="name">Name:</label><br>
 				    <input type="text" id="name" name="name"><br>
 				    <label for="age">Age:</label><br>
@@ -32,7 +32,7 @@
 					    <option value="VideoGame">BS in Video Gaming</option>
 					    <option value="InsDown">BS in Installing and Downloading</option>
 				    </select><br><br>
-				    <button id="btnSubmit" name="btnSubmit" onclick="add_student()">Submit</button>
+				    <button type="button" id="btnSubmit" name="btnSubmit" onclick="add_student(event)">Submit</button>
 				    <input type="reset">
 			    </form>
 		    </div>
