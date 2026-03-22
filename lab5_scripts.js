@@ -180,3 +180,5 @@ function display_all(event) {
 
   document.getElementById("searchOutput").innerHTML = output;
 }
+
+
