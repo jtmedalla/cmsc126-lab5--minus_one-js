@@ -36,7 +36,7 @@ function time_now() {
   const dayOfWeek = getDayOfWeek(now.getDay());
   const monthName = getMonthName(now.getMonth());
   const hour = now.getHours() < 12 ? now.getHours() : now.getHours() - 12;
-  const minutes = now.getMinutes();
+  const minutes = (now.getMinutes() < 10) ? "0" + now.getMinutes() : now.getMinutes;
   const meridiem = now.getHours() < 12 ? "AM" : "PM";
 
   const topMessage =
