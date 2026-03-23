@@ -5,7 +5,6 @@ body {
     background: url("assets/background.JPG");
     background-size: cover;
     background-attachment: scroll;
-    backdrop-filter: blur(1px);
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
@@ -100,6 +99,7 @@ button:hover {
 
 input[type="reset"] {
     background: black;
+    font-size: medium;
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
@@ -115,6 +115,9 @@ input[type="reset"]:hover {
     background-color: red;
 }
 
+.searchStd label {
+    font-size: large;
+}
 
 .searchRslt {
     margin-top: 15px;

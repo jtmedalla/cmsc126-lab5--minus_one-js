@@ -116,3 +116,39 @@ function validateForm(name, age, email) {
   }
   return errors;
 }
+
+// search student
+
+function find_student(event){
+    // prevent page refresh
+    if (event) event.preventDefault();
+
+    const searchID = document.getElementById("searchStd").value;
+    const outputDisplay = document.getElementById("searchOutput");
+    const foundStudent = students.find(s => s.studentID === searchID);
+
+    const courseNames = {
+        "FoodAppr": "BS in Food Appreciation",
+        "AppliedPoet": "BS in Applied Poetry of the Future",
+        "CompRepair": "BS in Computer Repair Shop",
+        "VideoGame": "BS in Video Gaming",
+        "InsDown": "BS in Installing and Downloading"
+    };
+
+    if (foundStudent){
+
+        const fullCourseName = courseNames[foundStudent.course] || foundStudent.course;
+
+        outputDisplay.innerHTML = `
+        <strong>Student Found:</strong><br>
+        ID: ${foundStudent.studentID}<br>
+        Name: ${foundStudent.name}<br>
+        Age: ${foundStudent.age}<br>
+        Email: ${foundStudent.email}<br>
+        Course: ${fullCourseName}
+        `;
+    }
+    else {
+    outputDisplay.innerHTML = "Student record does not exist";
+    }
+}
