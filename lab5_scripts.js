@@ -119,36 +119,63 @@ function validateForm(name, age, email) {
 
 // search student
 
+function getCourseName(course) {
+  const courseNames = {
+    FoodAppr: "BS in Food Appreciation",
+    AppliedPoet: "BS in Applied Poetry of the Future",
+    CompRepair: "BS in Computer Repair Shop",
+    VideoGame: "BS in Video Gaming",
+    InsDown: "BS in Installing and Downloading",
+  };
+
+  return courseNames[course];
+}
+
 function find_student(event){
-    // prevent page refresh
-    if (event) event.preventDefault();
+  // prevent page refresh
+  if (event) event.preventDefault();
 
-    const searchID = document.getElementById("searchStd").value;
-    const outputDisplay = document.getElementById("searchOutput");
-    const foundStudent = students.find(s => s.studentID === searchID);
+  const searchID = document.getElementById("searchStd").value;
+  const outputDisplay = document.getElementById("searchOutput");
+  const foundStudent = students.find(s => s.studentID === searchID);
 
-    const courseNames = {
-        "FoodAppr": "BS in Food Appreciation",
-        "AppliedPoet": "BS in Applied Poetry of the Future",
-        "CompRepair": "BS in Computer Repair Shop",
-        "VideoGame": "BS in Video Gaming",
-        "InsDown": "BS in Installing and Downloading"
-    };
+  if (foundStudent){
 
-    if (foundStudent){
+    const fullCourseName = getCourseName(foundStudent.course);
 
-        const fullCourseName = courseNames[foundStudent.course] || foundStudent.course;
-
-        outputDisplay.innerHTML = `
-        <strong>Student Found:</strong><br>
-        ID: ${foundStudent.studentID}<br>
-        Name: ${foundStudent.name}<br>
-        Age: ${foundStudent.age}<br>
-        Email: ${foundStudent.email}<br>
-        Course: ${fullCourseName}
-        `;
-    }
-    else {
+    outputDisplay.innerHTML = `
+    <strong>Student Found:</strong><br>
+    ID: ${foundStudent.studentID}<br>
+    Name: ${foundStudent.name}<br>
+    Age: ${foundStudent.age}<br>
+    Email: ${foundStudent.email}<br>
+    Course: ${fullCourseName}
+    `;
+  }
+  else {
     outputDisplay.innerHTML = "Student record does not exist";
-    }
+  }
+}
+
+// display all button
+function display_all(event) {
+  // prevent page refresh
+  if (event) event.preventDefault();
+
+  let output = "";
+
+  for (let i = 0; i < students.length; i++) {
+    const fullCourseName = getCourseName(students[i].course);
+
+    output += `
+      <strong>Entry number ${i + 1}:</strong><br>
+      ID: ${students[i].studentID}<br>
+      Name: ${students[i].name}<br>
+      Age: ${students[i].age}<br>
+      Email: ${students[i].email}<br>
+      Course: ${fullCourseName}<br><br>
+      `;
+  }
+
+  document.getElementById("searchOutput").innerHTML = output;
 }
