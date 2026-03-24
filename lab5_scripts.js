@@ -118,7 +118,6 @@ function validateForm(name, age, email) {
 }
 
 
-
 // search student
 
 function getCourseName(course) {
@@ -181,5 +180,3 @@ function display_all(event) {
 
   document.getElementById("searchOutput").innerHTML = output;
 }
-
-
